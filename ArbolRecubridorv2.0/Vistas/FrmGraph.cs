@@ -41,7 +41,7 @@ namespace ArbolRecubridorv2._0
             Rand[] aristas = new Rand[50];
 
             string[] lines = System.IO.File.ReadAllLines(pathFile);
-            System.Console.WriteLine("Contents of WriteLines2.txt = ");
+            System.Console.WriteLine("Contents of txt = ");
 
             int i = 0;
             foreach (string line in lines)
@@ -49,12 +49,12 @@ namespace ArbolRecubridorv2._0
                 Console.WriteLine("\t" + line);
                                 
                 ///
-                string nodeA = line.Substring(0, line.IndexOf("|"));
+                string nodeA = line.Substring(0, line.IndexOf(" "));
                 int intNodeA = Convert.ToInt16(nodeA);
                 int longNa = nodeA.Length + 1; // 1 del espacio
                 Console.WriteLine("Nodo a " + nodeA);
 
-                string nodeB = line.Substring(longNa, line.Substring(longNa).IndexOf("|"));
+                string nodeB = line.Substring(longNa, line.Substring(longNa).IndexOf(" "));
                 int intNodeB = Convert.ToInt16(nodeB);
                 int longNab = nodeB.Length + longNa + 1;
                 Console.WriteLine("Nodo b " + nodeB);
@@ -66,47 +66,65 @@ namespace ArbolRecubridorv2._0
                 nodos[intNodeA] = new Node(intNodeA);
                 nodos[intNodeB] = new Node(intNodeB);
                 ///
+                //
                 aristas[i] = new Rand(nodos[intNodeA], nodos[intNodeB], cost);
                 i++;
+
             }
 
-            foreach (Rand arista in grafo.Aristas)
+            Console.WriteLine("Hola  \t");
+            /*foreach (Rand arista in grafo.Aristas)
             {
                 Console.WriteLine(arista.toString());
             }
 
             grafo.ordenarAristas();
 
-            Console.WriteLine("");
-            foreach (Rand arista in grafo.Aristas)
-            {
-                Console.WriteLine(arista.toString());
-            }
+            Console.WriteLine("");*/ //No imprime nada
 
-            Console.WriteLine("\nSegunda prueba");
+           
+
+            Graph grafo2 = new Graph();
+
+
 
             String cadGraph = lines.ToString();
             
-            grafo.Aristas = AnalizerGraph.crearGrafo(cadGraph);
+            //grafo.Aristas = AnalizerGraph.crearGrafo(cadGraph);
 
-            grafo = Prim.obtenerMSPPrim(grafo);
+            //grafo = Prim.obtenerMSPPrim(grafo);
 
             foreach (Rand arista in grafo.Aristas)
             {
                 Console.WriteLine(arista.toString());
             } 
-
-
-            
+                       
         }
 
         private void pnlPrim_Paint(object sender, PaintEventArgs e)
         {
-            System.Drawing.Graphics graphics = pnlPrim.CreateGraphics();
+            /*System.Drawing.Graphics graphics = pnlPrim.CreateGraphics();
             System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(50, 100, 150, 150);
             graphics.DrawEllipse(System.Drawing.Pens.Black, rectangle);
-            graphics.DrawRectangle(System.Drawing.Pens.Red, rectangle);
+            graphics.DrawRectangle(System.Drawing.Pens.Red, rectangle);*/
+            int numNodes = 4;
 
+            int cDiam = pnlPrim.Height - 10;
+            double cRadius = cDiam / 2;
+
+            ///
+            Point result = new Point(0, 0);
+            Point centerPoint = new Point(0, 0);
+            double angle = Math.PI / (180 / numNodes); // *Math.PI / 180; //between 0 and 2 * PI, angle is in radians
+
+            for (int i = 0; i < numNodes; i++)
+            {
+                result.Y = (int)Math.Round(centerPoint.Y + cDiam * Math.Sin(angle));
+                result.X = (int)Math.Round(centerPoint.X + cDiam * Math.Cos(angle));                
+                System.Drawing.Graphics graphics = this.pnlPrim.CreateGraphics();
+                graphics.DrawEllipse(System.Drawing.Pens.Black, result.X, result.Y, 7, 7);
+                angle = angle * (i + 1);
+            }
 
         }
     }
