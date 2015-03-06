@@ -47,10 +47,17 @@
     <Compile Include="Class\AnalizerGraph.cs" />
     <Compile Include="Class\Files.cs" />
     <Compile Include="Class\Graph.cs" />
+    <Compile Include="Class\Kruscal.cs" />
     <Compile Include="Class\Node.cs" />
     <Compile Include="Class\Prim.cs" />
     <Compile Include="Class\Queue.cs" />
     <Compile Include="Class\Rand.cs" />
+    <Compile Include="Vistas\FrmCovert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FrmCovert.Designer.cs">
+      <DependentUpon>FrmCovert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\FrmGraph.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vistas\FrmCovert.resx">
+      <DependentUpon>FrmCovert.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FrmGraph.resx">
       <DependentUpon>FrmGraph.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +105,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tmp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\logoEscom.ico" />
+    <Content Include="img\LogoEscompng.png" />
+    <Content Include="img\LogoIPN.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

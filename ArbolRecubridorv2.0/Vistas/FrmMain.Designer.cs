@@ -31,15 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.rbnRuta = new System.Windows.Forms.RadioButton();
             this.rbnOther = new System.Windows.Forms.RadioButton();
-            this.lblNodes = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
             this.llbFormat = new System.Windows.Forms.LinkLabel();
             this.llbHelp = new System.Windows.Forms.LinkLabel();
             this.tbxPath = new System.Windows.Forms.TextBox();
             this.llbSearch = new System.Windows.Forms.LinkLabel();
             this.lblPath = new System.Windows.Forms.Label();
-            this.tbxNodes = new System.Windows.Forms.TextBox();
             this.btnAcept = new System.Windows.Forms.Button();
+            this.fbdFolderS = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // rbnRuta
@@ -57,7 +56,7 @@
             // rbnOther
             // 
             this.rbnOther.AutoSize = true;
-            this.rbnOther.Location = new System.Drawing.Point(46, 147);
+            this.rbnOther.Location = new System.Drawing.Point(46, 124);
             this.rbnOther.Name = "rbnOther";
             this.rbnOther.Size = new System.Drawing.Size(146, 17);
             this.rbnOther.TabIndex = 1;
@@ -65,16 +64,6 @@
             this.rbnOther.Text = "Capturando manualmente";
             this.rbnOther.UseVisualStyleBackColor = true;
             this.rbnOther.CheckedChanged += new System.EventHandler(this.rbnOther_CheckedChanged);
-            // 
-            // lblNodes
-            // 
-            this.lblNodes.AutoSize = true;
-            this.lblNodes.Location = new System.Drawing.Point(70, 85);
-            this.lblNodes.Name = "lblNodes";
-            this.lblNodes.Size = new System.Drawing.Size(97, 13);
-            this.lblNodes.TabIndex = 2;
-            this.lblNodes.Text = "Numero de nodos: ";
-            this.lblNodes.Visible = false;
             // 
             // lbl1
             // 
@@ -107,7 +96,7 @@
             // 
             // tbxPath
             // 
-            this.tbxPath.Location = new System.Drawing.Point(109, 110);
+            this.tbxPath.Location = new System.Drawing.Point(114, 84);
             this.tbxPath.Name = "tbxPath";
             this.tbxPath.Size = new System.Drawing.Size(483, 20);
             this.tbxPath.TabIndex = 6;
@@ -117,33 +106,25 @@
             // llbSearch
             // 
             this.llbSearch.AutoSize = true;
-            this.llbSearch.Location = new System.Drawing.Point(598, 113);
+            this.llbSearch.Location = new System.Drawing.Point(603, 87);
             this.llbSearch.Name = "llbSearch";
             this.llbSearch.Size = new System.Drawing.Size(49, 13);
             this.llbSearch.TabIndex = 7;
             this.llbSearch.TabStop = true;
             this.llbSearch.Text = "Buscar...";
             this.llbSearch.Visible = false;
+            this.llbSearch.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbSearch_LinkClicked);
+            this.llbSearch.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.llbSearch_MouseDoubleClick);
             // 
             // lblPath
             // 
             this.lblPath.AutoSize = true;
-            this.lblPath.Location = new System.Drawing.Point(70, 113);
+            this.lblPath.Location = new System.Drawing.Point(75, 87);
             this.lblPath.Name = "lblPath";
             this.lblPath.Size = new System.Drawing.Size(33, 13);
             this.lblPath.TabIndex = 8;
             this.lblPath.Text = "Ruta:";
             this.lblPath.Visible = false;
-            // 
-            // tbxNodes
-            // 
-            this.tbxNodes.Location = new System.Drawing.Point(172, 82);
-            this.tbxNodes.Name = "tbxNodes";
-            this.tbxNodes.Size = new System.Drawing.Size(171, 20);
-            this.tbxNodes.TabIndex = 9;
-            this.tbxNodes.Visible = false;
-            this.tbxNodes.TextChanged += new System.EventHandler(this.tbxNodes_TextChanged);
-            this.tbxNodes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxNodes_KeyPress);
             // 
             // btnAcept
             // 
@@ -156,20 +137,22 @@
             this.btnAcept.UseVisualStyleBackColor = true;
             this.btnAcept.Click += new System.EventHandler(this.btnAcept_Click);
             // 
+            // fbdFolderS
+            // 
+            this.fbdFolderS.ShowNewFolderButton = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 212);
             this.Controls.Add(this.btnAcept);
-            this.Controls.Add(this.tbxNodes);
             this.Controls.Add(this.lblPath);
             this.Controls.Add(this.llbSearch);
             this.Controls.Add(this.tbxPath);
             this.Controls.Add(this.llbHelp);
             this.Controls.Add(this.llbFormat);
             this.Controls.Add(this.lbl1);
-            this.Controls.Add(this.lblNodes);
             this.Controls.Add(this.rbnOther);
             this.Controls.Add(this.rbnRuta);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -186,15 +169,14 @@
 
         private System.Windows.Forms.RadioButton rbnRuta;
         private System.Windows.Forms.RadioButton rbnOther;
-        private System.Windows.Forms.Label lblNodes;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.LinkLabel llbFormat;
         private System.Windows.Forms.LinkLabel llbHelp;
         private System.Windows.Forms.TextBox tbxPath;
         private System.Windows.Forms.LinkLabel llbSearch;
         private System.Windows.Forms.Label lblPath;
-        private System.Windows.Forms.TextBox tbxNodes;
         private System.Windows.Forms.Button btnAcept;
+        private System.Windows.Forms.FolderBrowserDialog fbdFolderS;
     }
 }
 

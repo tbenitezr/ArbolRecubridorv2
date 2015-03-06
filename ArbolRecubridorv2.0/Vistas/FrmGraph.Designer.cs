@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGraph));
             this.gbxPrim = new System.Windows.Forms.GroupBox();
+            this.lblTimePrim = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlPrim = new System.Windows.Forms.Panel();
             this.gbxDraw = new System.Windows.Forms.GroupBox();
             this.btnDraw = new System.Windows.Forms.Button();
             this.gbxStart = new System.Windows.Forms.GroupBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.pnlPrim = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTimePrim = new System.Windows.Forms.Label();
             this.gbxKruscal = new System.Windows.Forms.GroupBox();
             this.lblTimeKruscal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,6 +60,34 @@
             this.gbxPrim.TabIndex = 0;
             this.gbxPrim.TabStop = false;
             this.gbxPrim.Text = "Prim";
+            // 
+            // lblTimePrim
+            // 
+            this.lblTimePrim.AutoSize = true;
+            this.lblTimePrim.Location = new System.Drawing.Point(7, 340);
+            this.lblTimePrim.Name = "lblTimePrim";
+            this.lblTimePrim.Size = new System.Drawing.Size(35, 13);
+            this.lblTimePrim.TabIndex = 2;
+            this.lblTimePrim.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Grafo";
+            // 
+            // pnlPrim
+            // 
+            this.pnlPrim.BackColor = System.Drawing.SystemColors.Window;
+            this.pnlPrim.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlPrim.Location = new System.Drawing.Point(7, 37);
+            this.pnlPrim.Name = "pnlPrim";
+            this.pnlPrim.Size = new System.Drawing.Size(303, 266);
+            this.pnlPrim.TabIndex = 0;
+            this.pnlPrim.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrim_Paint);
             // 
             // gbxDraw
             // 
@@ -109,33 +137,6 @@
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "linkLabel1";
-            // 
-            // pnlPrim
-            // 
-            this.pnlPrim.BackColor = System.Drawing.SystemColors.Window;
-            this.pnlPrim.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlPrim.Location = new System.Drawing.Point(7, 37);
-            this.pnlPrim.Name = "pnlPrim";
-            this.pnlPrim.Size = new System.Drawing.Size(303, 266);
-            this.pnlPrim.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Grafo";
-            // 
-            // lblTimePrim
-            // 
-            this.lblTimePrim.AutoSize = true;
-            this.lblTimePrim.Location = new System.Drawing.Point(7, 340);
-            this.lblTimePrim.Name = "lblTimePrim";
-            this.lblTimePrim.Size = new System.Drawing.Size(35, 13);
-            this.lblTimePrim.TabIndex = 2;
-            this.lblTimePrim.Text = "label2";
             // 
             // gbxKruscal
             // 

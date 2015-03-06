@@ -8,6 +8,7 @@ namespace ArbolRecubridorv2._0.Class
 {
     class Rand: IComparable<Rand>
     {
+        #region Atributos con get y set.
         // Primer nodo
         private Node nodoA;
 
@@ -41,6 +42,10 @@ namespace ArbolRecubridorv2._0.Class
             this.NodoB = nodoB;
             this.Peso = peso;
         }
+
+        #endregion
+
+
         /// <summary>
         /// Implementa el método CompareTo de la interfaz IComparable para poder
         /// ordenar las aristas según el peso.

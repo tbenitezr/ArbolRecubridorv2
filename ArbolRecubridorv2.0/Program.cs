@@ -8,7 +8,8 @@ namespace ArbolRecubridorv2._0
 {
     static class Program
     {
-        public static FrmMain INICIO;
+        //public static FrmMain INICIO;
+        public static FrmGraph INICIO;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,7 +18,7 @@ namespace ArbolRecubridorv2._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            INICIO = new FrmMain();
+            INICIO = new FrmGraph();
             Application.Run(INICIO);
 
         }

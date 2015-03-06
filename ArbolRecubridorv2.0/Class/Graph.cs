@@ -8,6 +8,7 @@ namespace ArbolRecubridorv2._0.Class
 {
     class Graph
     {
+        #region Atributos
         // Conjunto de nodos en el grafo
         private List<Node> nodos;
 
@@ -24,6 +25,9 @@ namespace ArbolRecubridorv2._0.Class
             get { return aristas; }
             set { aristas = value; }
         }
+
+        #endregion 
+
         /// <summary>
         /// Construye un nuevo grafo vacío
         /// </summary>

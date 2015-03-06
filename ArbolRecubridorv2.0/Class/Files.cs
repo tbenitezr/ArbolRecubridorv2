@@ -11,14 +11,13 @@ namespace ArbolRecubridorv2._0
 {
     class Files
     {
-        string path = null, nodes = null;
+        private string path = null, nodes = null;
 
-        string pathFile = @"..\...\Tmp\pathNode.txt";
+        private string pathFile = @"..\...\Tmp\pathNode.txt";
 
-        public Files(string path, string nodes)
+        public Files(string path)
         {
             this.path = path;
-            this.nodes = nodes;
         }
 
         public Files()

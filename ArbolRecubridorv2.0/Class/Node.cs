@@ -15,6 +15,7 @@ namespace ArbolRecubridorv2._0.Class
             this.explorado = false;
             this.Raiz = this;
         }
+        #region Atributos
         // Lista de nodos adyacentes
         private List<Node> adyacentes;
 
@@ -45,6 +46,9 @@ namespace ArbolRecubridorv2._0.Class
         public Node Raiz { get; set; }
 
         public int Rango { get; set; }
+
+        #endregion
+
         /// <summary>
         /// Obtiene la "raíz" del nodo, o el nodo de mayor rango que está
         /// conectado por una arista actualmente.
