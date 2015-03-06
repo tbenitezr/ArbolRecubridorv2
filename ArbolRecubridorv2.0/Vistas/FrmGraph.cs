@@ -103,27 +103,46 @@ namespace ArbolRecubridorv2._0
 
         private void pnlPrim_Paint(object sender, PaintEventArgs e)
         {
-            /*System.Drawing.Graphics graphics = pnlPrim.CreateGraphics();
-            System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(50, 100, 150, 150);
-            graphics.DrawEllipse(System.Drawing.Pens.Black, rectangle);
-            graphics.DrawRectangle(System.Drawing.Pens.Red, rectangle);*/
-            int numNodes = 4;
+            int numNodes = 8;
+            int tamCir = 7;
 
-            int cDiam = pnlPrim.Height - 10;
+            int cDiam = pnlPrim.Height;
             double cRadius = cDiam / 2;
+            double cRadiusI = (cDiam - 2 * tamCir) / 2; //Radio del círculo interior del panel
+
+            double grades = 360 / numNodes;
 
             ///
             Point result = new Point(0, 0);
-            Point centerPoint = new Point(0, 0);
-            double angle = Math.PI / (180 / numNodes); // *Math.PI / 180; //between 0 and 2 * PI, angle is in radians
+            Point centerPoint = new Point(Convert.ToInt16(cRadius - tamCir), Convert.ToInt16(cRadius - tamCir));
+            double angle = grades * Math.PI / 180; //Math.PI / (180 / numNodes); // *Math.PI / 180; //between 0 and 2 * PI, angle is in radians
+            double oangle = angle; //Angulo original.
+
+            int[] result2x = new int[numNodes];
+            int[] result2y = new int[numNodes];
 
             for (int i = 0; i < numNodes; i++)
             {
-                result.Y = (int)Math.Round(centerPoint.Y + cDiam * Math.Sin(angle));
-                result.X = (int)Math.Round(centerPoint.X + cDiam * Math.Cos(angle));                
-                System.Drawing.Graphics graphics = this.pnlPrim.CreateGraphics();
+
+                result.Y = (int)Math.Round(centerPoint.Y + cRadiusI * Math.Sin(angle));
+                result.X = (int)Math.Round(centerPoint.X + cRadiusI * Math.Cos(angle));
+                System.Drawing.Graphics graphics = pnlPrim.CreateGraphics();
                 graphics.DrawEllipse(System.Drawing.Pens.Black, result.X, result.Y, 7, 7);
-                angle = angle * (i + 1);
+                angle = oangle * (i + 2);
+
+                result2x[i] = result.X;
+                result2y[i] = result.Y;
+
+            }
+            
+            for (int i = 0; i < numNodes; i++) 
+            {
+                System.Drawing.Graphics graphicsObj;
+                graphicsObj = pnlPrim.CreateGraphics();
+
+                Pen myPen = new Pen(System.Drawing.Color.Red, 5);
+
+                graphicsObj.DrawLine(myPen, result2x[i], result2y[i], result2x[i+1], result2y[i+1]);
             }
 
         }

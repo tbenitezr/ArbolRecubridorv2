@@ -85,7 +85,7 @@
             this.pnlPrim.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlPrim.Location = new System.Drawing.Point(7, 37);
             this.pnlPrim.Name = "pnlPrim";
-            this.pnlPrim.Size = new System.Drawing.Size(303, 266);
+            this.pnlPrim.Size = new System.Drawing.Size(301, 301);
             this.pnlPrim.TabIndex = 0;
             this.pnlPrim.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrim_Paint);
             // 
@@ -174,7 +174,7 @@
             this.pnlKruscal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlKruscal.Location = new System.Drawing.Point(7, 37);
             this.pnlKruscal.Name = "pnlKruscal";
-            this.pnlKruscal.Size = new System.Drawing.Size(303, 266);
+            this.pnlKruscal.Size = new System.Drawing.Size(301, 301);
             this.pnlKruscal.TabIndex = 0;
             // 
             // lblTotTime
